@@ -8,6 +8,25 @@ class ConfigManager {
   }
   get(key) { return this.settings[key]; }
 }
+uploader.on('files-selected', files => {
+  const file = files[0];
+  if (file.type.startsWith('image')) previewer.showImage(file);
+  else previewer.showVideo(file);
+});
+
+uploader.on('upload-success', data => {
+  const card = new MediaCard(data);
+  document.querySelector('.gallery-grid').prepend(card.render());
+  document.querySelector('.status-message').textContent = 'Upload successful!';
+});
+
+uploader.on('upload-error', err => {
+  document.querySelector('.status-message').textContent = `Error: ${err.message}`;
+});
+
+uploader.on('validation-failed', file => {
+  document.querySelector('.status-message').textContent = `Invalid file: ${file.name}`;
+});
 
 class Uploader extends EventEmitter {
   constructor(formEl) {
