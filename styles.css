@@ -14,18 +14,7 @@
   background-color: var(--background-dark);
   color: var(--text-dark);
 }
-.site-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 2rem;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-  color: #fff;
-  box-shadow: var(--card-shadow);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
+
 .nav-menu ul {
   display: flex;
   list-style: none;
