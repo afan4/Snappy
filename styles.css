@@ -41,6 +41,18 @@
 .nav-menu a:hover::after {
   width: 100%;
 }
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: #fff;
+  box-shadow: var(--card-shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
 body, html {
   margin: 0;
   padding: 0;
