@@ -9,14 +9,7 @@
   --transition-slow: 0.4s ease-in-out;
   --font-sans: 'Helvetica Neue', Arial, sans-serif;
 }
-body, html {
-  margin: 0;
-  padding: 0;
-  font-family: var(--font-sans);
-  background-color: var(--background-light);
-  color: var(--text-light);
-  min-height: 100vh;
-}
+
 .theme-dark {
   background-color: var(--background-dark);
   color: var(--text-dark);
@@ -59,7 +52,14 @@ body, html {
 .nav-menu a:hover::after {
   width: 100%;
 }
-
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  background-color: var(--background-light);
+  color: var(--text-light);
+  min-height: 100vh;
+}
 .upload-section, .preview-section, .gallery-section, .settings-section {
   margin: 2rem auto;
   max-width: 900px;
