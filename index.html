@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Snappy - Share Code Screenshots & Videos</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <script type="module" src="app.js" defer></script>
+  <script type="application/json" id="app-config">
+    {
+      "apiEndpoint": "/api/media",
+      "maxFileSizeMB": 50,
+      "supportedTypes": ["image/png","image/jpeg","video/mp4"]
+    }
+  </script>
+</head>
+<body>
+  <div id="snappy-app" class="theme-light">
+    <header class="site-header">
+      <div class="logo">
+        <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+        <h1>Snappy</h1>
+      </div>
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="#upload">Upload</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#settings">Settings</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="upload" class="upload-section">
+        <h2>Upload Media</h2>
+        <form id="upload-form" enctype="multipart/form-data" novalidate>
+          <div class="file-input-wrapper">
+            <input type="file" id="file-input" name="media" accept="image/*,video/*" multiple/>
+            <label for="file-input">Choose Files</label>
+          </div>
+          <button type="submit" class="btn-primary">Upload</button>
+          <p class="upload-hint">You can drag &amp; drop files here or click to select.</p>
+        </form>
+      </section>
+
+      <section id="preview" class="preview-section">
+        <h2>Live Preview</h2>
+        <div class="preview-container">
+          <canvas id="snapshot-canvas"></canvas>
+          <video id="preview-video" controls muted></video>
+        </div>
+      </section>
+
+      <section id="gallery" class="gallery-section">
+        <h2>Community Gallery</h2>
+        <div class="gallery-grid"></div>
+        <button id="load-more" class="btn-secondary">Load More</button>
+      </section>
+
+      <section id="settings" class="settings-section">
+        <h2>Preferences</h2>
+        <div class="toggle-group">
+          <label for="theme-switch">Dark Mode</label>
+          <input type="checkbox" id="theme-switch"/>
+        </div>
+        <div class="toggle-group">
+          <label for="autoplay-switch">Autoplay Preview</label>
+          <input type="checkbox" id="autoplay-switch"/>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© 2025 Snappy • Powered by CS Devs</p>
+      <p class="status-message" aria-live="polite"></p>
+    </footer>
+
+    <template id="media-card-template">
+      <article class="media-card">
+        <div class="media-wrapper"></div>
+        <div class="card-details">
+          <h3 class="media-title"></h3>
+          <p class="media-meta"></p>
+          <div class="card-actions">
+            <button class="like-btn">❤ <span class="like-count">0</span></button>
+            <button class="download-btn">⤓</button>
+          </div>
+        </div>
+      </article>
+    </template>
+  </div>
+</body>
+</html>
