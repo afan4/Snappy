@@ -9,7 +9,6 @@
   --transition-slow: 0.4s ease-in-out;
   --font-sans: 'Helvetica Neue', Arial, sans-serif;
 }
-
 body, html {
   margin: 0;
   padding: 0;
@@ -18,12 +17,10 @@ body, html {
   color: var(--text-light);
   min-height: 100vh;
 }
-
 .theme-dark {
   background-color: var(--background-dark);
   color: var(--text-dark);
 }
-
 .site-header {
   display: flex;
   align-items: center;
@@ -36,7 +33,6 @@ body, html {
   top: 0;
   z-index: 100;
 }
-
 .nav-menu ul {
   display: flex;
   list-style: none;
@@ -60,7 +56,6 @@ body, html {
   background: #fff;
   transition: width var(--transition-slow);
 }
-
 .nav-menu a:hover::after {
   width: 100%;
 }
@@ -76,7 +71,6 @@ body, html {
   overflow: hidden;
   display: inline-block;
 }
-
 .file-input-wrapper input[type=file] {
   font-size: 100px;
   position: absolute;
@@ -111,7 +105,6 @@ body, html {
 
 .btn-secondary { background: transparent; color: var(--primary-color); border: 2px solid var(--primary-color); }
 .btn-secondary:hover { background: var(--primary-color); color: #fff; }
-
 .upload-hint {
   font-size: 0.9rem;
   color: rgba(0,0,0,0.6);
